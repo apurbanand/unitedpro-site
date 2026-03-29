@@ -7,183 +7,137 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        /* Removing all restrictive heights/widths for Google Sites Compatibility */
+        html, body { margin: 0; padding: 0; overflow-x: hidden; width: 100%; background-color: #f9fafb; }
+        
         .hero-section {
-            background: linear-gradient(rgba(15, 23, 42, 0.7), rgba(15, 23, 42, 0.7)), 
+            background: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), 
             url('https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Multiple+Pylon+Cable+stayed+bridge.png');
-            background-size: cover; background-position: center;
-        }
-        .pivot-section {
-            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
-            url('https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Good+Highway.png');
             background-size: cover; 
-            /* Fixed background disabled on mobile for better performance */
-            background-attachment: scroll;
+            background-position: center;
+            /* Using Padding instead of VH to prevent Google Sites "Squeezing" */
+            padding: 120px 20px;
+            color: white;
+            text-align: center;
         }
-        @media (min-width: 768px) {
-            .pivot-section { background-attachment: fixed; }
+
+        .pivot-section {
+            background: linear-gradient(rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.96)), 
+            url('https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Good+Highway.png');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 20px;
         }
+
+        /* Ensuring text scales correctly without wrapping too early */
+        .main-title { font-size: clamp(1.75rem, 6vw, 3.5rem); line-height: 1.2; font-weight: 800; }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="text-gray-900">
 
-    <!-- Header - Responsive Logo & Nav -->
-    <nav class="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 flex justify-between h-20 items-center">
-            <img class="h-10 md:h-16 w-auto" src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" alt="Unitedpro Logo">
-            <a href="#policies" class="text-[10px] md:text-xs font-bold uppercase tracking-widest text-gray-400 hover:text-blue-600 transition">Policies</a>
+    <nav class="bg-white shadow-md border-b sticky top-0 z-50">
+        <div class="w-full px-6 h-20 flex items-center">
+            <img class="h-10 md:h-12 w-auto" src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" alt="Unitedpro Logo">
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-section min-h-[60vh] md:h-[50vh] flex items-center justify-center text-center text-white px-4 py-12">
-        <div class="max-w-4xl">
-            <h1 class="text-3xl md:text-5xl font-bold mb-4 uppercase tracking-tight">Unitedpro Engineers Pvt. Ltd.</h1>
-            <p class="text-lg md:text-xl font-light text-blue-100 mb-6 tracking-wide">Infrastructure Engineering & Strategic Technical Consultancy</p>
-            <div class="inline-block px-6 py-2 border border-blue-400 rounded-full text-blue-300 text-xs md:text-sm font-semibold uppercase tracking-widest">
+    <header class="hero-section">
+        <div class="w-full">
+            <h1 class="main-title mb-6 uppercase tracking-tight">Unitedpro Engineers Pvt. Ltd.</h1>
+            <p class="text-lg md:text-xl mb-8 text-gray-200 font-light max-w-2xl mx-auto">Infrastructure Engineering & Strategic Technical Consultancy</p>
+            <div class="inline-block px-6 py-2 border border-blue-400 rounded-full text-blue-300 text-xs md:text-sm font-bold uppercase tracking-widest bg-blue-900/40">
                 Proven Track Record in Mega-Infrastructure
             </div>
         </div>
     </header>
 
-    <!-- Revolutionizing Productivity -->
-    <section class="py-12 md:py-20 bg-white">
-        <div class="max-w-5xl mx-auto px-4 text-center">
-            <h2 class="text-2xl md:text-3xl font-bold mb-8 text-slate-800 underline decoration-blue-500 underline-offset-8">Revolutionizing Productivity</h2>
-            <p class="text-base md:text-lg text-gray-600 leading-relaxed mb-12">
-                In today's fast-paced world, Unitedpro Engineers is at the forefront of technological evolution. 
-                We are dedicated to enhancing professional productivity through cost-effective, AI-driven solutions 
-                that streamline time-consuming tasks without compromising the highest levels of accuracy.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 text-left">
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-blue-500 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-2">Pay-As-You-Use</h4>
-                    <p class="text-sm text-gray-500">A fair and transparent pricing model. No rigid subscriptions; pay only for the services you actually utilize.</p>
-                </div>
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-blue-500 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-2">Work-Life Balance</h4>
-                    <p class="text-sm text-gray-500">Our services adapt to your individual needs and rhythm, ensuring professional success and personal well-being.</p>
-                </div>
-                <div class="p-6 bg-slate-50 rounded-xl border-l-4 border-blue-500 shadow-sm">
-                    <h4 class="font-bold text-slate-800 mb-2">Transparent Billing</h4>
-                    <p class="text-sm text-gray-500">Complete clarity with no hidden fees. Monitor your charges in real-time on our integrated portal.</p>
-                </div>
+    <section class="py-16 px-6 bg-white">
+        <div class="text-center mb-12">
+            <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-4 underline decoration-blue-500 underline-offset-8">Revolutionizing Productivity</h2>
+            <p class="text-gray-600">Enhancing precision through AI-driven engineering solutions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+                <h4 class="font-bold text-lg mb-2">Pay-As-You-Use</h4>
+                <p class="text-sm text-gray-500">A fair pricing model. No rigid subscriptions; pay only for what you utilize.</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+                <h4 class="font-bold text-lg mb-2">Work-Life Balance</h4>
+                <p class="text-sm text-gray-500">Services that adapt to your individual needs and rhythm, ensuring success.</p>
+            </div>
+            <div class="p-6 bg-gray-50 rounded-2xl border-l-4 border-blue-600 shadow-sm">
+                <h4 class="font-bold text-lg mb-2">Transparent Billing</h4>
+                <p class="text-sm text-gray-500">Complete clarity with no hidden fees. Monitor your charges in real-time.</p>
             </div>
         </div>
     </section>
 
-    <!-- Engineering Footprint -->
-    <section class="py-12 md:py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="mb-12">
-                <h2 class="text-2xl md:text-3xl font-bold mb-2 tracking-tight uppercase text-center md:text-left">Our Engineering Footprint</h2>
-                <div class="h-1 w-20 bg-blue-500 mx-auto md:mx-0"></div>
+    <section class="py-16 px-6 bg-slate-900 text-white">
+        <h2 class="text-2xl md:text-3xl font-bold mb-10 text-center uppercase tracking-tight">Our Engineering Footprint</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-slate-800 rounded-3xl overflow-hidden shadow-xl">
+                <img src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Elevated+Road.png" class="w-full h-48 md:h-64 object-cover">
+                <div class="p-6 md:p-8">
+                    <span class="text-blue-400 text-xs font-bold uppercase tracking-widest">Claims & Consultancy</span>
+                    <h3 class="text-xl md:text-2xl font-bold mt-3 mb-2">DSC Road Elevated Project, Noida</h3>
+                    <p class="text-sm text-gray-400 italic leading-relaxed">Prepared the Comprehensive Statement of Claims for the 5.5 Km 6-Lane Road project.</p>
+                </div>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <div class="bg-slate-800 rounded-3xl overflow-hidden border border-slate-700 shadow-xl">
-                    <img src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Elevated+Road.png" class="w-full h-48 md:h-64 object-cover" alt="Noida Elevated Road">
-                    <div class="p-6 md:p-8">
-                        <span class="bg-blue-900 text-blue-300 text-[10px] font-bold px-3 py-1 rounded-full uppercase tracking-tighter">Claims & Consultancy</span>
-                        <h3 class="text-xl md:text-2xl font-bold mt-4 mb-2 text-white">DSC Road Elevated Project, Noida</h3>
-                        <p class="text-blue-400 font-medium text-xs md:text-sm mb-4">Client: UP State Bridge Corporation</p>
-                        <p class="text-sm md:text-base text-gray-300 leading-relaxed italic">Prepared the Comprehensive Statement of Claims for the 5.5 Km 6-Lane Elevated Road project, covering junctions Barola, Bhangel, and Sectors 42, 48, 47, 101, and 107.</p>
+            <div class="bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-700">
+                <h3 class="text-xl md:text-2xl font-bold text-blue-300 mb-6 uppercase">Technical Due Diligence</h3>
+                <div class="space-y-4 text-sm md:text-base">
+                    <div class="border-b border-slate-700 pb-3">
+                        <h4 class="font-bold">NH-57 Bihar Expressway</h4>
+                        <p class="text-xs text-gray-400">4-Lane Kosi River Bridge Assessment</p>
                     </div>
-                </div>
-
-                <div class="bg-slate-800 rounded-3xl p-6 md:p-8 border border-slate-700">
-                    <h3 class="text-xl md:text-2xl font-bold mb-2 text-white">Technical Due Diligence</h3>
-                    <p class="text-blue-400 font-medium text-xs mb-8 uppercase tracking-widest italic">Client: Ramboll India, Gurgaon</p>
-                    <div class="space-y-6">
-                        <div class="border-b border-slate-700 pb-4">
-                            <h4 class="text-blue-200 font-bold mb-1">NH-57 Bihar Expressway</h4>
-                            <p class="text-xs md:text-sm text-gray-400">4-Lane Kosi River Bridge (Km 155 to 165)</p>
-                        </div>
-                        <div class="border-b border-slate-700 pb-4">
-                            <h4 class="text-blue-200 font-bold mb-1">NH-3 Maharashtra Corridor</h4>
-                            <p class="text-xs md:text-sm text-gray-400">Dhule-Pimpalgaon Infrastructure Assessment</p>
-                        </div>
-                        <div class="border-b border-slate-700 pb-4">
-                            <h4 class="text-blue-200 font-bold mb-1">APEPL NH-44 Expressway</h4>
-                            <p class="text-xs md:text-sm text-gray-400">Kothakota (Telangana) to Kurnool (AP)</p>
-                        </div>
-                        <div class="pb-4">
-                            <h4 class="text-blue-200 font-bold mb-1">NH-5 Odisha Project</h4>
-                            <p class="text-xs md:text-sm text-gray-400">Chandikhole-Bhubaneswar Strategic Assessment</p>
-                        </div>
+                    <div class="border-b border-slate-700 pb-3">
+                        <h4 class="font-bold">NH-3 Maharashtra Corridor</h4>
+                        <p class="text-xs text-gray-400">Dhule-Pimpalgaon Infrastructure</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">APEPL NH-44 Expressway</h4>
+                        <p class="text-xs text-gray-400">Kothakota to Kurnool Section</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Pivot Section -->
-    <section class="pivot-section py-12 md:py-20">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-white/80 backdrop-blur-md p-6 md:p-10 rounded-[2rem] md:rounded-[3rem] shadow-2xl border border-white/50 text-center">
-                <h2 class="text-2xl md:text-3xl font-bold mb-6 md:mb-8 text-slate-800 italic">"The Evolution of Precision"</h2>
-                <p class="text-base md:text-lg text-gray-700 leading-relaxed italic mb-10">
-                    Unitedpro was built on the front lines of India's foundational engineering challenges. 
-                    Assessing structural integrity and verifying safety for vast highways requires technical scrutiny where <strong>accuracy is not a luxury</strong>—it is the difference between compliance and failure.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
-                    <img src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Single+Pylon+Cable+Stayed+Bridge.png" class="rounded-2xl md:rounded-3xl shadow-lg w-full" alt="Precision">
-                    <div>
-                        <h4 class="font-bold text-blue-900 text-lg md:text-xl mb-4 underline decoration-blue-500 underline-offset-4">Why we built Anveshak</h4>
-                        <p class="text-sm md:text-base text-gray-600 leading-relaxed italic">
-                            We recognized that the core challenge facing every professional is the volume of fragmented documentation. 
-                            We moved our manual engineering methodology into a digital ecosystem to scale precision through AI.
-                        </p>
-                    </div>
+    <section class="pivot-section">
+        <div class="bg-white p-6 md:p-12 rounded-[2rem] shadow-2xl border text-center max-w-5xl mx-auto">
+            <h2 class="text-xl md:text-3xl font-bold mb-6 italic">"The Evolution of Precision"</h2>
+            <p class="text-sm md:text-lg text-gray-700 leading-relaxed italic mb-10">Unitedpro was built where <strong>accuracy is not a luxury</strong>—it is the difference between compliance and failure.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center text-left">
+                <img src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/Single+Pylon+Cable+Stayed+Bridge.png" class="rounded-2xl w-full shadow-lg">
+                <div>
+                    <h4 class="font-bold text-blue-900 text-lg mb-4 underline decoration-blue-500 underline-offset-4">Why we built Anveshak</h4>
+                    <p class="text-xs md:text-sm text-gray-600 italic">We moved our manual engineering methodology into a digital ecosystem to scale precision through AI. We recognized that the core challenge is fragmented documentation.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Policies Section -->
-    <section id="policies" class="py-12 md:py-20 bg-gray-50">
-        <div class="max-w-4xl mx-auto px-4">
-            <div class="bg-white p-6 md:p-12 border border-gray-200 rounded-3xl shadow-sm">
-                <h2 class="text-xl md:text-2xl font-bold text-indigo-800 mb-8 border-b pb-4">Shipping & Refund Policies</h2>
-                
-                <div class="space-y-8">
-                    <div>
-                        <h3 class="font-bold text-gray-800 text-base md:text-lg mb-2">Shipping & Delivery</h3>
-                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
-                            Unitedpro provides digital AI services. No physical shipping is applicable. Delivery of service occurs instantly via the cloud upon task execution on the Anveshak platform.
-                        </p>
-                    </div>
-
-                    <div>
-                        <h3 class="font-bold text-gray-800 text-base md:text-lg mb-2">Cancellation & Refund</h3>
-                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
-                            Anveshak operates on a <strong>Pay-As-You-Use</strong> model. Once a deposit is made into the user wallet, <strong>no cancellations or refunds are entertained</strong>. Credits remain valid as long as the account is active.
-                        </p>
-                    </div>
-                    
-                    <div>
-                        <h3 class="font-bold text-gray-800 text-base md:text-lg mb-2">Data Finality</h3>
-                        <p class="text-xs md:text-sm text-gray-600 leading-relaxed">
-                            In accordance with our Terms, balances are forfeited if an account is deleted due to six months of inactivity.
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="mt-12 pt-6 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center text-[10px] md:text-xs text-gray-400 gap-4">
-                    <p>Last updated: March 2026</p>
-                    <p>Contact: <a href="mailto:info@unitedpro.in" class="text-blue-500 hover:underline">info@unitedpro.in</a></p>
-                </div>
+    <section class="py-16 px-6">
+        <div class="bg-white p-8 border rounded-2xl shadow-sm max-w-4xl mx-auto">
+            <h2 class="text-xl font-bold text-indigo-800 mb-6 border-b pb-4">Shipping & Refund Policies</h2>
+            <div class="space-y-6 text-sm text-gray-600">
+                <p><strong>Shipping:</strong> Digital AI services delivered instantly via cloud.</p>
+                <p><strong>Refunds:</strong> Pay-As-You-Use model. Deposits are final; credits remain valid for active accounts.</p>
+            </div>
+            <div class="mt-8 pt-4 border-t text-[10px] text-gray-400 flex justify-between">
+                <span>Last updated: March 2026</span>
+                <span>Contact: info@unitedpro.in</span>
             </div>
         </div>
     </section>
 
-    <!-- Minimal Footer -->
-    <footer class="bg-white py-8 md:py-12 border-t border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <img class="h-10 md:h-12 w-auto mx-auto mb-6 opacity-40 grayscale" src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" alt="Logo">
-            <p class="text-[10px] text-gray-400 uppercase tracking-widest italic">Unitedpro Engineers Pvt. Ltd.</p>
-            <p class="text-[9px] text-gray-400 mt-2">© 2026 All rights reserved.</p>
-        </div>
+    <footer class="bg-white py-12 border-t text-center px-6">
+        <img src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" class="h-10 mx-auto mb-4 opacity-40 grayscale">
+        <p class="text-xs uppercase tracking-[0.2em] font-bold text-gray-500">Unitedpro Engineers Pvt. Ltd.</p>
+        <p class="text-[9px] mt-2 text-gray-400">© 2026 All rights reserved.</p>
     </footer>
 
 </body>
