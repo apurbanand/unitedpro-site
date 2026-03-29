@@ -36,8 +36,13 @@
 <body class="text-gray-900">
 
     <nav class="bg-white shadow-md border-b sticky top-0 z-50">
-        <div class="w-full px-6 h-20 flex items-center">
-            <img class="h-10 md:h-20 w-auto" src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" alt="Unitedpro Logo">
+    <!-- Increased h-20 to h-24 if you want a really big logo, 
+         otherwise keep h-20 for a standard look -->
+        <div class="w-full px-6 h-24 flex items-center">
+            <!-- h-16 (64px) on mobile and h-20 (80px) on desktop -->
+            <img class="h-16 md:h-20 w-auto object-contain" 
+                 src="https://anveshak-public-assets.s3.ap-south-1.amazonaws.com/logo_unitedpro.jpg" 
+                 alt="Unitedpro Logo">
         </div>
     </nav>
 
